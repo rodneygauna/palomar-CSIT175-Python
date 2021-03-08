@@ -1,10 +1,7 @@
 """
-This module
+This module if for Assignment 4.
+There are two functions; is_field_blank() obtains the user's first name, while is_field_a_number() obtains the user's age.
 """
-
-last_name = ""
-user_age = 0
-
 def is_field_blank():
     """
     This function takes the user's first name.
