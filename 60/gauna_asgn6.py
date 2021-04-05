@@ -22,11 +22,13 @@ def main():
 
         # step 6a - if file name entered is "end", end the program
         if file_name == "end":
+            print("Program Ended")
             break
         # step 6b-1 - if file name entered is "items.txt read the file,
         else:
             try:
                 with open(file_name, "r") as file:
+                    print("")
                     # step 6b-2 - replace the breakline with an empty string,
                     # step 6b-3 - add the items to the list
                     for line in file:
@@ -54,19 +56,21 @@ def main():
                                 # step 8a-3b - display an error message
                                 print(f"You entered an invalid float that could not convert string to float: {price} \nSkipping to the next item after {item}\n")
                                 break
+                with open("costlist.txt", "r") as file:
+                    contents = file.read()
+                    # step 9 - display "Cost List"
+                    print("\nCost List\n")
+                    # step 10 - display each line from the costlist.txt file
+                    print(contents)
+                    # step 11 - display "Program End"
+                    print("\nProgram End")
+                    break
             # step 6c - if FileNotFoundError exception, display the error and let the user try again
             except FileNotFoundError:
                 print("Could not find file named", file_name + ". Please Try Again\n")
-            with open("costlist.txt", "r") as file:
-                contents = file.read()
-                # step 9 - display "Cost List"
-                print("\nCost List\n")
-                # step 10 - display each line from the costlist.txt file
-                print(contents)
-                break
+            
     
-    # step 11 - display "Program End"
-    print("\nProgram End")
+    
 
 
 
