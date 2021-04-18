@@ -39,20 +39,16 @@ def main():
             if askWizard.lower() == "":
                 continue
             else:
-                break
+                word = func.getTarget(askWizard)
+                answerList = func.createList(word)
+                func.spinTheWheel(name, answerList)
         
-            word = func.getTarget(askWizard)
-            answerList = func.createList(word)
-            func.spinTheWheel(name, answerList)
         elif keepGoing.lower() == "n":
             time = datetime.datetime.now()
             # TODO if you have time, try to figure out when to add "st", "nd", "rd", and "th"
             print("On this day,", time.strftime("%A") + ", the", time.strftime("%d") + "th in the month of", time.strftime("%B"), "in the year of", time.strftime("%Y"))
             print("The Wizard wants you to go away now!")
             break
-
-        
-
 
 if __name__ == "__main__":
     main()

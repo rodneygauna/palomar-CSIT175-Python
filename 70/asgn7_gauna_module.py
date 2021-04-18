@@ -7,6 +7,8 @@ createList() - # TODO add description
 spinTheWheel() - # TODO add description
 """
 
+import datetime
+
 def payMe():
     """
     Prompts the user for a payment amount,
@@ -79,6 +81,14 @@ def spinTheWheel(name, list):
     then Return the answer
     """
     
+    countList = len(list)
+
+    time = datetime.datetime.now()
+    seconds = time.second
+
+    randomItem = seconds % countList
+    message = list[randomItem]
+
     while True:
         userSpins = input("Press ENTER to Spin the Wheel")
         
