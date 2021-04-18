@@ -3,8 +3,8 @@ This module if for Assignment 7.
 There are 4 functions for this module:
 payMe() - Prompts the user for a payment amount, validates the minium amount, displays an exceptions
 getTarget() - Parses the user's entry of a question and checks for keywords (Who, What, Where, When, Why, or How), returns the frist keyword found or "unknown" if none
-createList() - # TODO add description
-spinTheWheel() - # TODO add description
+createList() - Search the A7_answers.txt file for the keyword passed from getTarget(), slice and split the text, return the list of answers
+spinTheWheel() - Pass the user's name and the list from createList(), randomly select and pass the answer by dividing seconds and list count, prompt the user to spin the wheel, and return the answer
 """
 
 import datetime
@@ -22,7 +22,7 @@ def payMe():
         float_payment = float(payment)
 
         if float_payment >= 975.46:
-            print("\nThe", "${:,.2f}".format(float_payment), "seems like a fair price")
+            print("\nI guess", "${:,.2f}".format(float_payment), "seems like a fair price")
             return True
         else:
             print("\nGo Away!")
@@ -90,12 +90,12 @@ def spinTheWheel(name, list):
     message = list[randomItem]
 
     while True:
-        userSpins = input("Press ENTER to Spin the Wheel")
+        userSpins = input("\nPress ENTER to Spin the Wheel")
         
         if userSpins.lower() == "":
             break
         else:
             continue
     
-    print("Spin..Spin..Spin....Spin.......Spin........tick, tick, tick, stop")
-    return print(f"Attention {name}! The Wizard delcares: {message}")
+    print("\nSpin..Spin..Spin....Spin.......Spin........tick, tick, tick, stop")
+    return print(f"\nAttention {name}! The Wizard delcares: {message} \n")
